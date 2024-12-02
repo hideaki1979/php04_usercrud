@@ -1,0 +1,377 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;  /* 高さを画面分確保 */
+    /* GoogleFonts */
+    font-family: "Sawarabi Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 12vh;  /* ヘッダー固定の領域分パディング */
+    flex-direction: column;
+    font-size: .75em;
+}
+
+a {
+    text-decoration: none;
+    color: #010718;
+}
+
+ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    background-color: #f4f0cd;
+    width: 100%;
+    height: 12vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-bottom: 2px double #fff066;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.headertitle {
+    width: 50%;
+    float: left;
+    padding-left: 2%;
+}
+
+.leftarea {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.screenlist {
+    width: 50%;
+    height: 100%;
+    float: right;
+    font-size: .7em;
+}
+
+.headerlink {
+    position: relative;
+    display: inline-block;
+    transition: .3s;
+}
+
+.headerlink::after {
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #575531;
+    transition: .3s;
+    transform: translate(-50%);
+}
+
+.headerlink:hover::after {
+    width: 100%;
+}
+
+.main {
+    display: flex;  /* 中央配置をする際にflex指定が必要 */
+    justify-content: center;    /* 左右中央配置 */
+    align-items: center;    /* 上下中央配置 */
+    height: 88vh;
+}
+
+.mainimg {
+    opacity: .5;
+    max-height: 88vh;
+}
+
+.uploadform,
+.registform {
+    display: flex;  /* 中央配置をする際にflex指定が必要 */
+    flex-direction: column; /* 縦一列にする */
+    justify-content: center;    /* 上下中央配置（flex-direction:columnは上下、デフォルトは左右） */
+    align-items: flex-start;    /* 左右中央配置（flex-direction:columnは左右、デフォルトは上下） */
+    width: 60%;
+    padding-left: 10%;
+    border: 2px double black;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.uploadform {
+    gap: 2em;
+    margin: 5vh auto;
+    height: 85%;
+}
+
+.registform {
+    gap: .4em;
+    margin: 2vh auto;
+    height: 95%;
+}
+
+.uploadguide {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.searcharea {
+    padding: 1.5% 0 0 3%;
+    max-width: 100%;
+}
+
+.searchform {
+    display: flex;  /* 行単位でflex指定が必要 */
+    flex-direction: column; /* 行単位でcolumnが必要 */
+    gap: 10px;
+    padding-bottom: 2vh;
+    border-bottom: 2px double #ccc;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.row input[type="text"],
+.row textarea,
+.row input[type="date"] {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: beige;
+}
+
+.row input[type="text"],
+.row select {
+    height: 2.5em;
+}
+
+.row select {
+    appearance: auto;
+    padding: 1px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: beige;
+}
+
+.condtitle {
+    width: 25%;
+}
+
+.condpublisher {
+    width: 18%;
+}
+.pricefrom,
+.priceto {
+    width: 10%;
+}
+
+.publisherlabel {
+    padding-left: 2%;
+}
+
+.uploadbtn {
+    font-size: 1em;
+    width: 20%;
+    padding: 8px;
+}
+
+.searchbtn {
+    width: 5%;
+    font-size: .8em;
+    padding: 5px;
+}
+
+.isbnbtn {
+    width: 10%;
+    font-size: .8em;
+    padding: 5px;
+}
+
+.formbutton {
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    appearance: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.formbutton:hover {
+    background-color: rgb(33, 150, 243);
+}
+
+.datecontainer {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+}
+
+.datecontainer label {
+    margin: 0 2%;
+}
+
+.datecontainer input[type="checkbox"] {
+    width: 20px;
+    border: 1px solid #ccc;
+    height: 20px;
+    appearance: auto;
+}
+
+.resultarea {
+    padding-top: 1vh;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.booklist,
+.userlist {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    text-align: center;
+    color: white;
+    background: linear-gradient(#829ebc,#225588);
+    border-left: 1px solid #3c6690;
+    border-top: 1px solid #3c6690;
+    border-bottom: 1px solid #3c6690;
+    box-shadow: 0 1px 1px rgba(255,255,255,0.3) inset;
+    font-size: 1em;
+}
+
+/* 一覧の偶数行 */
+tr:nth-of-type(even){
+    background-color: rgb(214, 243, 252);
+}
+
+/* 一覧で3行目以降の奇数行（1行目はタイトルのため） */
+tr:nth-of-type(odd):nth-of-type(n+3) {
+    background-color: #e7fef0;
+}
+
+th:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 5px 0 0;
+}
+
+td:not(:first-child) {
+    vertical-align: middle;
+    font-size: .7rem;
+    padding: 5px;
+}
+
+td:first-child {
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 0;
+}
+
+td.cover {
+    width: 7%;
+}
+
+td.title {
+    width: 17%;
+}
+
+td.publisher {
+    width: 8%;
+}
+
+td.author {
+    width: 10%;
+}
+
+td.price {
+    width: 5%;
+}
+
+td.releasedate {
+    width: 10%;
+}
+
+td.caption {
+    width: 33%;
+}
+
+td.updatebtn,
+td.deletebtn,
+td.deletechk {
+    width: 5%;
+}
+
+td > a,
+.td_upbtn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    appearance: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+td > a:hover {
+    background-color: rgb(33, 150, 243);
+}
+
+.regrow {
+    width: 90%;
+}
+
+.reglabel {
+    width: 15%;
+}
+
+.screenname {
+    font-size: 1.5em;
+    padding-bottom: 2vh;
+}
+
+.regrow > .title {
+    width: 70%;
+}
+
+.regrow > .author {
+    width: 50%;
+}
+
+.regrow > .imageurl {
+    width: 80%;
+}
+
+.registbtn,
+.update {
+    width: 20%;
+    font-size: .8em;
+    padding: 5px;
+}

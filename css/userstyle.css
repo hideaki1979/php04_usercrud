@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+.userform {
+    display: flex;  /* 中央配置をする際にflex指定が必要 */
+    flex-direction: column; /* 縦一列にする */
+    justify-content: center;    /* 上下中央配置（flex-direction:columnは上下、デフォルトは左右） */
+    align-items: center;    /* 左右中央配置（flex-direction:columnは左右、デフォルトは上下） */
+    width: 60%;
+    height: 75%;
+    gap: 1.5em;
+    margin: 5vh auto;
+    border: 2px double black;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.userguide {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.userrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.usertext {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: beige;
+    width: 30%;
+    height: 2.5em;
+}
+
+.loginbtn {
+    width: 10%;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.userlabel {
+    width: 15%;
+    font-size: 12px;
+}
+
+.userlabelradio {
+    margin-left: 20%;
+    width: 15%;
+    font-size: 12px;
+}
+
+.radioarea {
+    width: 50%;
+    display: flex;
+    gap: .75em
+}
+
+.kanriflg {
+    width: 15px;
+    height: 15px;
+    appearance: auto;   /* ブラウザ仕様に戻す */
+}
+
+.condtitle {
+    width: 20%;
+}
+
+.lifeflglabel {
+    padding-left: 2%;
+}
+
+.condlifeflg {
+    width: 10%;
+}
+
+.condkanriflg {
+    width: 15px;
+    height: 15px;
+    appearance: auto;   /* ブラウザ仕様に戻す */
+}
+.condradioarea {
+    width: 15%;
+    display: flex;
+    gap: .75em
+}
+
+.condkanriflglabel {
+    padding-right: 3%;
+}
+
+.conduserlabelradio {
+    font-size: 12px;
+    padding-right: 1%;
+}
+
+td.username,
+td.userloginid {
+    text-align: left;
+    padding: 5px;
+    width: 25%;
+}
+
+td.userkanriflg,
+td.userlifeflg {
+    width: 10%;
+}
+
+.selectlifeflg {
+    width: 20%;
+    margin-right: 10%;
+    height: 2.5em;
+    appearance: auto;
+    padding: 1px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: beige;
+}
+
+.deletechk {
+    text-align: center;
+}
+
+.delchkbox {
+    width: 12px;
+    border: 1px solid #ccc;
+    height: 12px;
+    appearance: auto;
+}
+
+.deletebtnarea {
+    padding: 1em 0 .5em 3em;
+}
+
+.bulkdelbtn {
+    width: 6%;
+    font-size: .85em;
+    padding: 3px;
+}
