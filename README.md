@@ -2,10 +2,10 @@
 - MIRRORMAN BOOKSTORE-RETURNS(改改)
 
 # ②課題内容（どんな作品か）
-- 前回の課題からユーザ情報のCRUDを実装とプラスアルファ。  
+- 前回の課題からユーザ情報のCRUD実装とプラスアルファ。  
 
 ## ③アプリのデプロイURL  
-  
+https://kagami-hide.sakura.ne.jp/php04_usercrud/  
 
 ## ④アプリのログイン用IDまたはPassword（ある場合）
 - ID: 管理者「iwaki@mail.com」、一般「tonoma@mail.com」
